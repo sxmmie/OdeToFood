@@ -1,0 +1,22 @@
+﻿@model HomeIndexViewModel
+
+@{
+    @ViewBag = "HomePage";
+}
+
+<h1>@Model.CurrenetMessage</h1>
+
+@foreach (var restaurant in Model.Restaurants)
+{
+    @Html.Partial("_Summary", restaurant);
+}
+
+<div>
+    <a class="btn btn-primary" asp-action="Create">Add Restaurant</a>
+</div>
+
+<div>
+    @section footer {
+        @Model.CurrenetMessage
+    }
+</div>
